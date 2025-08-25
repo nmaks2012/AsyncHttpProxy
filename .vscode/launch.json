@@ -1,0 +1,40 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Launch AsyncHttpProxy_tests",
+            "program": "${workspaceFolder}/build/AsyncHttpProxy_tests",
+            "args": [],
+            "cwd": "${workspaceFolder}/build",
+            "preLaunchTask": "build-and-debug",
+            "env": {
+                "GTEST_COLOR": "1"
+            }
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Launch AsyncHttpProxy (main app)",
+            "program": "${workspaceFolder}/build/AsyncHttpProxy",
+            "args": [],
+            "cwd": "${workspaceFolder}/build",
+            "preLaunchTask": "build-and-debug"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug current test file",
+            "program": "${workspaceFolder}/build/AsyncHttpProxy_tests",
+            "args": [
+                "--gtest_filter=*${fileBasenameNoExtension}*"
+            ],
+            "cwd": "${workspaceFolder}/build",
+            "preLaunchTask": "build-and-debug",
+            "env": {
+                "GTEST_COLOR": "1"
+            }
+        }
+    ]
+}
